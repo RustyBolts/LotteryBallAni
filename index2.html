@@ -8,24 +8,12 @@
   <!-- 引入Cocos Creator的样式文件 -->
   <link rel="stylesheet" type="text/css" href="style2.css"/>
 
-  <!-- 添加一个外部接口函数，用于与Cocos Creator游戏进行交互 -->
-  <script>
-    // function callCocosCreatorMethod() {
-    //   // 在这里调用Cocos Creator中的方法
-    //   if (typeof window.cc !== 'undefined' && typeof window.cc.Input !== 'undefined' && typeof window.cc.Input.yourMethodName === 'function') {
-    //     window.cc.Input.yourMethodName();
-    //   }
-    // }
-  </script>
 </head>
 <body>
   <!-- 在此处创建一个容纳Cocos Creator Canvas的div元素 -->
   <div id="Cocos3dGameContainer" style="width: 420; height: 210;">
     <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
   </div>
-
-  <!-- 在其他网页中添加一个按钮或事件，以调用外部接口函数 -->
-  <!-- <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button> -->
 
 <!-- Polyfills bundle. -->
 <script src="src/polyfills.bundle.js" charset="utf-8"> </script>
@@ -42,5 +30,20 @@
     System.import('./index.js').catch(function(err) { console.error(err); })
   </script>
   
+  <!-- 添加一个外部接口函数，用于与Cocos Creator游戏进行交互 -->
+  <script>
+    function callCocosCreatorMethod() {
+      // 在这里调用Cocos Creator中的方法
+      // if (typeof window.cc !== 'undefined' && typeof window.cc.Input !== 'undefined' && typeof window.cc.Input.yourMethodName === 'function') {
+      //   window.cc.Input.yourMethodName();
+      // }
+      // AnimateController.Input([12,2,1,3,4]);
+      TSWrapper.Input([1,2,3,4,5], 10, 5);
+    }
+  </script>
+  
+  <!-- 在其他网页中添加一个按钮或事件，以调用外部接口函数 -->
+  <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button>
+
 </body>
 </html>
