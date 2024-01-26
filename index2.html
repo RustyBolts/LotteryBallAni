@@ -28,6 +28,10 @@
   <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button>
 
   <!-- 引入Cocos Creator的JavaScript文件 -->
-  <script src="index.js" charset="utf-8"></script>
+  <!-- <script src="index.js" charset="utf-8"></script> -->
+  <script>
+    System.import('./index.js').catch(function(err) { console.error(err); })
+  </script>
+  
 </body>
 </html>
