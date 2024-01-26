@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cocos Creator | LotteryBallAni</title>
+  <!-- 其他头部内容 -->
+
+  <!-- 引入Cocos Creator的样式文件 -->
+  <link rel="stylesheet" type="text/css" href="style2.css"/>
+
+  <!-- 添加一个外部接口函数，用于与Cocos Creator游戏进行交互 -->
+  <script>
+    // function callCocosCreatorMethod() {
+    //   // 在这里调用Cocos Creator中的方法
+    //   if (typeof window.cc !== 'undefined' && typeof window.cc.Input !== 'undefined' && typeof window.cc.Input.yourMethodName === 'function') {
+    //     window.cc.Input.yourMethodName();
+    //   }
+    // }
+  </script>
+</head>
+<body>
+  <!-- 在此处创建一个容纳Cocos Creator Canvas的div元素 -->
+  <div id="Cocos3dGameContainer" style="width: 100%; height: 100%;">
+    <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+  </div>
+
+  <!-- 在其他网页中添加一个按钮或事件，以调用外部接口函数 -->
+  <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button>
+
+  <!-- 引入Cocos Creator的JavaScript文件 -->
+  <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
