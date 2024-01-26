@@ -25,7 +25,16 @@
   </div>
 
   <!-- 在其他网页中添加一个按钮或事件，以调用外部接口函数 -->
-  <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button>
+  <!-- <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button> -->
+
+<!-- Polyfills bundle. -->
+<script src="src/polyfills.bundle.js" charset="utf-8"> </script>
+
+<!-- SystemJS support. -->
+<script src="src/system.bundle.js" charset="utf-8"> </script>
+
+<!-- Import map -->
+<script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
 
   <!-- 引入Cocos Creator的JavaScript文件 -->
   <!-- <script src="index.js" charset="utf-8"></script> -->
