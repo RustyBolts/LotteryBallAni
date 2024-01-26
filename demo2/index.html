@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Cocos Creator | LotteryBallAni</title>
+  <!-- 其他头部内容 -->
+
+  <!-- 引入Cocos Creator的样式文件 -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <!-- 在其他网页中添加一个按钮或事件，以调用外部接口函数 -->
+  <button onclick="callCocosCreatorMethod()">Call Cocos Creator Method</button>
+
+</head>
+
+<body>
+  <!-- 在此处创建一个容纳Cocos Creator Canvas的div元素 -->
+  <div id="Cocos3dGameContainer" style="width: 420; height: 210;">
+    <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+  </div>
+
+  <!-- Polyfills bundle. -->
+  <script src="src/polyfills.bundle.js" charset="utf-8"> </script>
+
+  <!-- SystemJS support. -->
+  <script src="src/system.bundle.js" charset="utf-8"> </script>
+
+  <!-- Import map -->
+  <script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
+
+  <!-- 引入Cocos Creator的JavaScript文件 -->
+  <!-- <script src="index.js" charset="utf-8"></script> -->
+  <script>
+    System.import('./index.js').catch(function (err) { console.error(err); })
+  </script>
+
+  <!-- 添加一个外部接口函数，用于与Cocos Creator游戏进行交互 -->
+  <script>
+    function callCocosCreatorMethod() {
+      // 在这里调用Cocos Creator中的方法
+      let cnt = 1;
+      let list = new Array(50).fill(0).map(_ => cnt++).sort(() => Math.random() - 0.5).slice(0, 15);
+      AnimateController.Input(list, 10, 5);
+    }
+  </script>
+
+</body>
+
+</html>
